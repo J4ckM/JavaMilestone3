@@ -1,0 +1,65 @@
+
+This is a pseudocode file.
+Hopefully it'll help explain what occurs in this Project.
+
+I found out how to do this here:
+https://stackoverflow.com/questions/15695984/java-print-contents-of-text-file-to-screen
+Answer by: Jiri Kremser
+If that isn't sufficient explanation for purposes of academic integrity, I'll delete this file
+and move it into the Explain method in the "game" class, as cases of System.out.println("the lines from this");
+
+
+!!!!!!!!!!!!!!!!!!!!!!!
+First things first:
+The three classes with fully annotated javadoc files are:
+Game, Avatar, Bat
+!!!!!!!!!!!!!!!!!!!!!!!
+
+
+What's happening here:
+The Player character is the avatar, he can be moved with the a, d and space keys (left, right, jump respectively)
+the s key will cause him to go down, or if walking on a platform, to stop moving
+With the mouse button, the player can use a grappling hook. Left click sends out the grappling hook,
+and upon the hook's contact with a Platform/Wall, the avatar is pulled towards the hook (until the avatar clicks a movement key, disengaging him)
+
+The fruits give him powers, changing the colour of his life hearts in the top right (although red is the default and adds to his hearts unless they're 5 or greater in number)
+Currently: red = default/extra heart, Blue = speedier, green = higher jump, yellow = invulnerable + fireballs
+In Future: red = default/extra heart, Blue = Agile (speedier + higher jump), green = invulnerable, yellow = fireballs
+They have now been given a timer, after which the powers will have worn off (until another fruit of the same type is eaten).
+
+Fruit can be found in chests, by hitting them on the underside.
+Coins (which raise your score) can also be found in chests.
+What's contained within a chest is dependent on the chest's colour (brown for coins, the rest is self-explanatory).
+You will know you've taken all you can from a chest when it opens.
+
+The Spiders are the earliest encountered enemies, they move from left to right and vice versa once they bump into something.
+You lose a heart by touching them, as with all enemies.
+You can jump on the spider's heads to kill them (and don't lose a heart for this).
+Other enemies are Bats and Wolves.
+Bats fly and will hone in on you. They kill you in one hit.
+Wolves are much like spiders, but larger. They can't be killed by jumping on them, they're faster, and as stated, larger.
+All can be killed with fireballs.
+
+Coloured platforms also affect the character. What they do is dependent on their colour. The colours are related to the fruit colours.
+A dark coloured platform will do a negative action related to its colour. So a dark blue platform will slow you down, a dark red will cause damage.
+A light coloured platform will do a positive action related to its colour. So a light blue platform will increase speed, a pink will increase health.
+
+Platform = horizontal Platform
+Wall = Vertical Platform
+Box = Platform unaffected by collisions in any way (for example, hooks don't disappear upon contact with them)
+
+Touching the flag at the end of the level will bring you to the next level.
+
+Controls:   Since the game is a work in progress, some of these are effectively cheats.
+A and D are for movement left and right. Space lets you jump and S means you descend faster.
+When in Yellowstate, pressing Q and E will release fireballs to the left and the right respectively.
+the M button will mute and unmute the sound.
+Z zooms the screen in and unzooms
+
+Cheat Controls:
+7, 8 and 9 will cause the avatar's state to become blue, green and yellow respectively. Combinations of these can occur.
+0 will cause the avatar to revert to the neutral state.
+X and C will cause you to lose and gain hearts respectively.
+O (the letter) will bring you to the next level (or should, it's a work in progress currently)
+P will bring the player to the position (1000,1000), it's where the grappling hook is kept when not being used. Not a very important control.
+
